@@ -1,0 +1,12 @@
+
+
+.row {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
