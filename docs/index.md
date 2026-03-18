@@ -7,8 +7,7 @@ icon: lucide/rocket
 
 # reactor-uc
 
-reactor-uc (pronounced reactor micro-c) is a distributed task scheduling runtime for [Lingua Franca](https://lf-lang.org)
-targeted at embedded and resource-constrained systems.
+reactor-uc (pronounced reactor micro-c) is a distributed task scheduling runtime for [Lingua Franca](https://lf-lang.org) targeted at embedded and resource-constrained systems.
 
 ## Lingua Franca Language
 
