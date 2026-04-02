@@ -11,6 +11,7 @@ Annotations for configuring individual reactor components and connections.
     Specifies the maximum number of elements that can be queued in a logical action's buffer. This controls memory usage and prevents unbounded growth of pending events.
     
     **Parameters:**
+
     - `<number>`: Maximum queue size (positive integer)
 
 - **`@buffer(<number>)`**
@@ -18,6 +19,7 @@ Annotations for configuring individual reactor components and connections.
     Specifies the maximum number of elements that can be in transit across a delayed connection. Useful for controlling backpressure in pipelines.
     
     **Parameters:**
+
     - `<number>`: Maximum buffer size (positive integer)
 
 ## Platform Configuration
@@ -38,6 +40,7 @@ Configure communication channels between federates using various network protoco
     TCP/IP network interface for federate communication.
     
     **Parameters:**
+
     - `name`: Interface identifier
     - `address`: Host and port (format: "host:port")
 
@@ -46,6 +49,7 @@ Configure communication channels between federates using various network protoco
     UART/serial interface for embedded systems communication.
     
     **Parameters:**
+
     - `name`: Interface identifier
     - `uart_device`: Device number
     - `baud_rate`: Communication speed (e.g., 115200)
@@ -59,6 +63,7 @@ Configure communication channels between federates using various network protoco
     CoAP (Constrained Application Protocol) interface for IoT communication.
     
     **Parameters:**
+
     - `name`: Interface identifier
     - `address`: Server address
 
@@ -67,6 +72,7 @@ Configure communication channels between federates using various network protoco
     S4NoC network-on-chip interface for tightly-coupled embedded systems.
     
     **Parameters:**
+
     - `core`: Core identifier
 
 - **`@interface_custom(name="c1", args="blabla", include="my_network.h")`**
@@ -74,6 +80,7 @@ Configure communication channels between federates using various network protoco
     Custom network interface for user-defined communication protocols.
     
     **Parameters:**
+
     - `name`: Interface identifier
     - `args`: Custom arguments passed to the interface
     - `include`: Header file containing the interface implementation
@@ -95,8 +102,9 @@ Configure how federates communicate across network interfaces.
     Controls how federates synchronize when joining a federation.
     
     **Policies:**
-    - `"TIMER_ALIGNED"`: Synchronize to a common time reference
-    - `"IMMEDIATELY"`: Begin execution immediately
+
+    * `"TIMER_ALIGNED"`: Synchronize to a common time reference
+    * `"IMMEDIATELY"`: Begin execution immediately
 
 ## Clock Synchronization
 
@@ -107,6 +115,7 @@ Configure distributed clock synchronization across federated systems.
     Enable and configure clock synchronization using a PTP-like protocol.
     
     **Parameters:**
+    
     - `grandmaster`: Whether this federate is the time reference (true/false)
     - `period`: Synchronization period in nanoseconds
     - `max_adj`: Maximum clock adjustment per sync cycle (nanoseconds)
@@ -123,7 +132,7 @@ The following annotations are from earlier Lingua Franca versions and are not cu
 - `@side("value")`
 - `@layout(option="string", value="any")` — e.g., `@layout(option="port.side", value="WEST")`
 - `@enclave(each=boolean)`
-- `@property(name="<property_name>", tactic="<induction|bmc>", spec="<SMTL_spec>", CT=0, expect=true)` — SMTL is the safety fragment of Metric Temporal Logic (MTL)
+- `@property(name="<property_name>", tactic="<induction|bmc>", spec="<SMTL_spec>", CT=0, expect=true)` - SMTL is the safety fragment of Metric Temporal Logic (MTL)
 - `@_c_body`
 - `@_tpoLevel`
 - `@_networkReactor`

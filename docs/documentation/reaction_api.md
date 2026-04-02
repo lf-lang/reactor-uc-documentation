@@ -12,7 +12,7 @@ reaction(t) {=
 
 Query the current logical and physical time within the reactor system.
 
-### `env->get_logical_time(env)`
+- **`env->get_logical_time(env)`**
 
 Returns the current logical time of the reactor system.
 
@@ -23,25 +23,25 @@ Returns the current logical time of the reactor system.
 instant_t now = env->get_logical_time(env);
 ```
 
-### `env->get_elapsed_logical_time(env)`
+- **`env->get_elapsed_logical_time(env)`**
 
 Returns the elapsed logical time since the program started.
 
 **Returns:** `instant_t` — Elapsed logical time in nanoseconds
 
-### `env->get_physical_time(env)`
+- **`env->get_physical_time(env)`**
 
 Returns the current physical (wall-clock) time.
 
 **Returns:** `instant_t` — Current physical time in nanoseconds
 
-### `env->get_elapsed_physical_time(env)`
+- **`env->get_elapsed_physical_time(env)`**
 
 Returns the elapsed physical time since the program started.
 
 **Returns:** `instant_t` — Elapsed physical time in nanoseconds
 
-### `env->get_lag(env)`
+- **`env->get_lag(env)`**
 
 Returns the difference between logical and physical time (lag). A positive value indicates the system is keeping up with real-time.
 
@@ -49,7 +49,7 @@ Returns the difference between logical and physical time (lag). A positive value
 
 ## Synchronization and Waiting
 
-### `env->wait_for(env, duration)`
+- **`env->wait_for(env, duration)`**
 
 Blocks the current reaction until the specified duration has elapsed.
 
@@ -60,11 +60,11 @@ Blocks the current reaction until the specified duration has elapsed.
 
 Protect shared resources in concurrent environments.
 
-### `env->enter_critical_section(env)`
+- **`env->enter_critical_section(env)`**
 
 Enters a critical section. No other reactions will execute until the critical section is left.
 
-### `env->leave_critical_section(env)`
+- **`env->leave_critical_section(env)`**
 
 Leaves the current critical section, allowing other reactions to execute.
 
@@ -78,7 +78,7 @@ env->leave_critical_section(env);
 
 ## Shutdown Control
 
-### `env->request_shutdown(env)`
+- **`env->request_shutdown(env)`**
 
 Requests that the reactor system shut down gracefully after the current round of execution completes.
 
@@ -86,7 +86,7 @@ Requests that the reactor system shut down gracefully after the current round of
 
 Read and write values on reactor ports.
 
-### `lf_set(port, value)`
+- **`lf_set(port, value)`**
 
 Sets the value of an output port.
 
@@ -99,7 +99,7 @@ Sets the value of an output port.
 lf_set(output, 42);
 ```
 
-### `lf_set_array(port, length, array)`
+- **`lf_set_array(port, length, array)`**
 
 Sets an array value on an output port.
 
@@ -114,7 +114,7 @@ int values[] = {1, 2, 3};
 lf_set_array(output, 3, values);
 ```
 
-### `lf_get(port)`
+- **`lf_get(port)`**
 
 Reads the current value from an input port.
 
@@ -125,7 +125,7 @@ Reads the current value from an input port.
 int value = lf_get(input);
 ```
 
-### `lf_is_present(port)`
+- **`lf_is_present(port)`**
 
 Checks if a port has a value present at the current logical time.
 
@@ -142,7 +142,7 @@ if (lf_is_present(input)) {
 
 Schedule logical actions to occur at a future logical time.
 
-### `lf_schedule(action, delay)`
+- **`lf_schedule(action, delay)`**
 
 Schedules an action to trigger after the specified delay.
 
@@ -155,7 +155,7 @@ Schedules an action to trigger after the specified delay.
 lf_schedule(my_action, MSEC(100)); // Schedule 100ms in the future
 ```
 
-### `lf_schedule_array(action, delay, length, array)`
+- **`lf_schedule_array(action, delay, length, array)`**
 
 Schedules an action with array payload to trigger after the specified delay.
 
