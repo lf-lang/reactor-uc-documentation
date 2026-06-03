@@ -18,6 +18,7 @@ nav:
     - Platform Abstraction: design/platform.md
     - Code Generation: design/building.md
     - Federated Execution: design/federated.md
+    - vs reactor-c: design/reactor-c-comparison.md
   - Documentation:
     - Annotations: documentation/annotations.md
     - Reaction API: documentation/reaction_api.md

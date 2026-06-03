@@ -78,21 +78,26 @@ env->leave_critical_section(env);
 
 ## Shutdown Control
 
-- **`env->request_shutdown(env)`**
+- **`env->request_shutdown(env, time)`**
 
-Requests that the reactor system shut down gracefully after the current round of execution completes.
+Requests that the reactor system shut down gracefully after the specified time.
+
+**Parameters:**
+- `env`: Pointer to the env
+- `time`: In which time the program should shutdown.
 
 ## Port Operations
 
 Read and write values on reactor ports.
 
 - **`lf_set(port, value)`**
+- **`lf_set(port)`**
 
 Sets the value of an output port.
 
 **Parameters:**
 - `port`: Output port handle
-- `value`: Value to set (type depends on port declaration)
+- `value`: Value to set, type depends on port declaration. Optional if the port is of type void.
 
 **Example:**
 ```c

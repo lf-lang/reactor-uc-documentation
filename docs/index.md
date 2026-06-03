@@ -154,4 +154,4 @@ Built by researchers and engineers from leading institutions worldwide:
 </div>
 
 !!! tip "Join Us"
-    This project is looking for collaborators, users, and industry partners to fully realize the potential of the reactor model for embedded systems. Please [reach out to us](mailto: tassilo.tanneberger@tu-dresden.de)!
+    This project is looking for collaborators, users, and industry partners to fully realize the potential of the reactor model for embedded systems. Join our [Google Group](https://groups.google.com/g/micro-lf) or [reach out to us](mailto: tassilo.tanneberger@tu-dresden.de)!
