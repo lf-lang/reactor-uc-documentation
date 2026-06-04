@@ -3,7 +3,7 @@
 - **Template**: [lf-patmos-template](https://github.com/lf-lang/lf-patmos-template)
 - **Patmos Project**: [patmos-project](https://github.com/t-crest/patmos)
 
-Patmos is a time-predictable processor designed for hard real-time systems and WCET (Worst-Case Execution Time) analysis. reactor-uc supports single-threaded static scheduling on Patmos.
+Patmos is a time-predictable processor designed for hard real-time systems and WCET (Worst-Case Execution Time) analysis. The uLF runtime supports single-threaded static scheduling on Patmos.
 
 ## Prerequisites
 
@@ -79,4 +79,4 @@ make APP=SingleConnection FUNC=_sinkreaction_function_0 wcet
 
 ## Static Scheduling
 
-Patmos uses reactor-uc's **static scheduler** for predictable execution timing. The schedule is computed at compile time, enabling precise WCET analysis.
+Patmos uses the uLF runtime's **static scheduler** for predictable execution timing. The schedule is computed at compile time, enabling precise WCET analysis.

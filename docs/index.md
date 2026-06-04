@@ -1,6 +1,6 @@
-# reactor-uc
+# micro-LF
 
-**Deterministic concurrency for embedded systems.** reactor-uc brings the [reactor model of computation](https://lf-lang.org) to resource-constrained microcontrollers—eliminating race conditions, deadlocks, and non-determinism.
+**Deterministic concurrency for embedded systems.** micro-LF brings the [reactor model of computation](https://lf-lang.org) to resource-constrained microcontrollers—eliminating race conditions, deadlocks, and non-determinism.
 
 ## Key Features
 
@@ -16,7 +16,7 @@
 
     ---
 
-    No dynamic allocation at runtime. All memory is pre-allocated, making reactor-uc suitable for safety-critical systems.
+    No dynamic allocation at runtime. All memory is pre-allocated, making the uLF runtime suitable for safety-critical systems.
 
 -   :material-chip:{ .lg .middle } **Multi-Platform**
 
@@ -75,7 +75,7 @@
 
 <div markdown>
 
-[Lingua Franca](https://lf-lang.org) is a polyglot coordination language for building deterministic, concurrent systems. reactor-uc is the embedded runtime that enables LF programs to run efficiently on microcontrollers.
+[Lingua Franca](https://lf-lang.org) is a polyglot coordination language for building deterministic, concurrent systems. The uLF runtime is the embedded runtime that enables LF programs to run efficiently on microcontrollers.
 
 [:octicons-arrow-right-24: Learn more at lf-lang.org](https://lf-lang.org)
 
@@ -113,7 +113,7 @@ main reactor {
 
     ---
 
-    Set up your first reactor-uc project with our step-by-step guide.
+    Set up your first micro-LF project with our step-by-step guide.
 
     [:octicons-arrow-right-24: Getting Started](getting-started/index.md)
 

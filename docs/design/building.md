@@ -1,6 +1,6 @@
 # Code Generation and Compilation
 
-The design of systems with reactor-uc and Lingua Franca (LF) follows a top-down approach, where the programmer starts with a design written in the LF language. The LF compiler (lfc) translates this design into C code that uses the reactor-uc runtime library for execution. This generated code is platform-agnostic and can be compiled for various embedded and resource-constrained systems.
+The design of systems with micro-LF and Lingua Franca (LF) follows a top-down approach, where the programmer starts with a design written in the LF language. The LF compiler (lfc) translates this design into C code that uses the uLF runtime library for execution. This generated code is platform-agnostic and can be compiled for various embedded and resource-constrained systems.
 
 ## Code Generation Process
 
@@ -13,9 +13,9 @@ The LF compiler (lfc) is the code-generator that transforms LF source files into
 
 For federated (distributed) programs, lfc generates separate subfolders for each federate, containing the necessary code and build files for that node.
 
-## reactor-uc Runtime Library
+## uLF Runtime Library
 
-reactor-uc is technically a runtime library written in C, providing the core execution engine for the reactor model. It implements:
+The uLF runtime is technically a runtime library written in C, providing the core execution engine for the reactor model. It implements:
 
 - Event-driven scheduling
 - Logical time management
@@ -31,14 +31,14 @@ The library is highly configurable through compile-time flags, allowing it to be
 
 ## Build System Integration
 
-reactor-uc enables seamless integration into existing toolchains. The generated code includes importable build files (CMake or Makefiles) that can be incorporated into your project's build system.
+The uLF runtime enables seamless integration into existing toolchains. The generated code includes importable build files (CMake or Makefiles) that can be incorporated into your project's build system.
 
 ### Zephyr Integration
 
 For Zephyr-based projects, lfc provides integration through a custom west command. The build process follows the standard Zephyr workflow:
 
 1. west calls lfc to generate C code from LF sources
-2. Generated code is compiled alongside reactor-uc library
+2. Generated code is compiled alongside the uLF runtime library
 3. west uses CMake to configure and build the final executable
 
 ### RIOT OS Integration
@@ -46,7 +46,7 @@ For Zephyr-based projects, lfc provides integration through a custom west comman
 For RIOT OS projects with Make-based toolchains, lfc is integrated into the application Makefile:
 
 1. `make all` first invokes lfc on LF sources
-2. Generated sources are compiled with the reactor-uc library
+2. Generated sources are compiled with the uLF runtime library
 3. Standard RIOT build process produces the binary
 
 ### Other Platforms
@@ -57,11 +57,11 @@ For common platforms like Raspberry Pi Pico (pico-sdk), we provide build templat
 graph LR
   A[LF Source Files] --> B[lfc Code Generator];
   B -->|Generates C Code| C[Platform-Specific Code];
-  D[reactor-uc Library] --> E[Configured with Compile Flags];
+  D[uLF Runtime Library] --> E[Configured with Compile Flags];
   C --> F[Build System];
   E --> F;
   F --> G[Cross Compiler];
   G --> H[Binary];
 ```
 
-This approach ensures that reactor-uc applications can be built using familiar tools while benefiting from the deterministic execution guarantees of the reactor model.
+This approach ensures that micro-LF applications can be built using familiar tools while benefiting from the deterministic execution guarantees of the reactor model.

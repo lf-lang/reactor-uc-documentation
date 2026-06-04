@@ -10,7 +10,7 @@ Traditional concurrent programs operate in **physical time**—the actual wall-c
 - Race conditions arise from unpredictable interleavings
 - Debugging is difficult because bugs may not reproduce
 
-reactor-uc introduces **logical time**—an abstract notion of time that progresses in discrete steps, independent of physical execution. Events occur at logical time instants, and the scheduler ensures they are processed in logical time order.
+The uLF runtime introduces **logical time**—an abstract notion of time that progresses in discrete steps, independent of physical execution. Events occur at logical time instants, and the scheduler ensures they are processed in logical time order.
 
 ```
 Physical Time:  ──────────────────────────────────────▶
@@ -24,7 +24,7 @@ The key insight: **logical time only advances when all processing at the current
 
 ## Tags
 
-A **tag** is the fundamental unit of logical time in reactor-uc. It consists of two components:
+A **tag** is the fundamental unit of logical time in the uLF runtime. It consists of two components:
 
 ```c
 typedef struct {
@@ -153,7 +153,7 @@ When a physical action is scheduled:
 3. The event is inserted into the event queue
 4. The scheduler may be woken from sleep
 
-Physical actions require special handling because they can arrive at any time, potentially during reaction execution. reactor-uc uses **critical sections** to protect the event queue from concurrent access.
+Physical actions require special handling because they can arrive at any time, potentially during reaction execution. The uLF runtime uses **critical sections** to protect the event queue from concurrent access.
 
 ## Determinism Guarantees
 
@@ -175,7 +175,7 @@ The time model provides **determinism** under specific conditions:
 
 ### Practical determinism
 
-Even with physical actions, reactor-uc maintains **logical determinism**:
+Even with physical actions, the uLF runtime maintains **logical determinism**:
 
 - Given the same sequence of events (with their tags), execution is deterministic
 - Physical actions add events to this sequence
@@ -217,7 +217,7 @@ Logical Time:   ──────●───────┼──────�
 
 ## Time Utilities
 
-reactor-uc provides convenience macros for time values:
+The uLF runtime provides convenience macros for time values:
 
 ```c
 // Time literals

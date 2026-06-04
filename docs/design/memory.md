@@ -1,6 +1,6 @@
 # Memory Management
 
-Embedded systems have strict memory constraints. reactor-uc uses a **pre-allocation strategy** that allocates all memory at startup, ensuring predictable behavior and avoiding the pitfalls of dynamic allocation.
+Embedded systems have strict memory constraints. The uLF runtime uses a **pre-allocation strategy** that allocates all memory at startup, ensuring predictable behavior and avoiding the pitfalls of dynamic allocation.
 
 ## Why No Runtime Allocation?
 
@@ -11,11 +11,11 @@ Dynamic memory allocation (`malloc`/`free`) is problematic for embedded systems:
 - **Exhaustion risk**: Out-of-memory errors are hard to handle gracefully
 - **Debugging difficulty**: Memory leaks and corruption are hard to trace
 
-reactor-uc avoids these issues by allocating all memory at startup, before the reactor program begins executing.
+The uLF runtime avoids these issues by allocating all memory at startup, before the reactor program begins executing.
 
 ## Pre-allocation Strategy
 
-All reactor-uc data structures are sized at compile time:
+All uLF runtime data structures are sized at compile time:
 
 ```c
 // Generated code allocates fixed-size arrays
@@ -48,7 +48,7 @@ graph LR
 
 ## Event Payload Pools
 
-**Actions** need to store payloads for pending events. Since multiple events can be pending simultaneously, reactor-uc uses **payload pools**:
+**Actions** need to store payloads for pending events. Since multiple events can be pending simultaneously, the uLF runtime uses **payload pools**:
 
 ```c
 typedef struct {
@@ -110,7 +110,7 @@ This generates a pool with 5 slots for action `a`.
 
 ## Stack vs Heap Allocation
 
-reactor-uc supports both allocation strategies:
+The uLF runtime supports both allocation strategies:
 
 ### Stack Allocation (Default)
 
@@ -160,7 +160,7 @@ This places structures in the `.bss` or `.data` sections, separate from the stac
 
 ## Memory Layout
 
-A typical reactor-uc program has this memory layout:
+A typical micro-LF program has this memory layout:
 
 ```
 ┌─────────────────────────────────────┐ High addresses
@@ -170,7 +170,7 @@ A typical reactor-uc program has this memory layout:
 │  - Reaction call frames              │
 ├─────────────────────────────────────┤
 │             Heap                     │
-│  (unused by reactor-uc)              │
+│  (unused by the uLF runtime)         │
 ├─────────────────────────────────────┤
 │             .bss                     │
 │  - Static reactor structures         │
@@ -242,7 +242,7 @@ if (ret != LF_OK) {
 
 ## Memory Debugging
 
-reactor-uc provides logging to help debug memory issues:
+The uLF runtime provides logging to help debug memory issues:
 
 ```c
 // Enable memory logging

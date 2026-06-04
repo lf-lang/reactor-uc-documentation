@@ -1,8 +1,8 @@
 # Design Philosophy
 
-reactor-uc brings the **reactor model of computation** to resource-constrained embedded systems. This section explains the core concepts, design decisions, and trade-offs that shape the runtime.
+micro-LF brings the **reactor model of computation** to resource-constrained embedded systems. This section explains the core concepts, design decisions, and trade-offs that shape the runtime.
 
-## Why reactor-uc?
+## Why micro-LF?
 
 Concurrent programming on embedded systems is notoriously difficult. Traditional approaches—bare-metal interrupts, RTOS tasks, or event loops—require developers to manually manage synchronization, timing, and communication. This leads to:
 
@@ -26,13 +26,13 @@ At its core, the reactor model structures programs as a composition of **reactor
   <img src="/assets/images/diagrams/BasicReactor.svg" alt="Basic Reactor" width="80%">
 </p>
 
-This model is implemented in the [Lingua Franca](https://lf-lang.org) coordination language, and reactor-uc serves as the execution runtime for embedded targets.
+This model is implemented in the [Lingua Franca](https://lf-lang.org) coordination language, and the uLF runtime serves as the execution runtime for embedded targets.
 
 ## Design Principles
 
 ### 1. Determinism Through Logical Time
 
-Every event in reactor-uc occurs at a **logical time**, independent of when it physically executes. Events at the same logical time are ordered by **microsteps**, providing a total ordering of all events. This means:
+Every event in the uLF runtime occurs at a **logical time**, independent of when it physically executes. Events at the same logical time are ordered by **microsteps**, providing a total ordering of all events. This means:
 
 - Given the same inputs, the program produces the same outputs
 - Debugging is reproducible—you can replay executions exactly
@@ -40,7 +40,7 @@ Every event in reactor-uc occurs at a **logical time**, independent of when it p
 
 ### 2. Resource Efficiency
 
-Embedded systems have tight memory and CPU constraints. reactor-uc is designed with this in mind:
+Embedded systems have tight memory and CPU constraints. The uLF runtime is designed with this in mind:
 
 - **No dynamic allocation at runtime**—all memory is pre-allocated
 - **Minimal dependencies**—just the C standard library (and nanopb for federation)
@@ -48,7 +48,7 @@ Embedded systems have tight memory and CPU constraints. reactor-uc is designed w
 
 ### 3. Composability
 
-Complex systems are built from simpler parts. reactor-uc supports:
+Complex systems are built from simpler parts. The uLF runtime supports:
 
 - **Hierarchical reactors**—reactors can contain child reactors
 - **Typed connections**—ports enforce type compatibility
@@ -69,7 +69,7 @@ A thin **platform abstraction layer** provides timing, synchronization, and I/O 
 
 ### 5. Distribution Without Sacrificing Correctness
 
-reactor-uc supports **federated execution**—distributing reactors across multiple nodes connected by networks. The runtime maintains determinism guarantees through:
+The uLF runtime supports **federated execution**—distributing reactors across multiple nodes connected by networks. The runtime maintains determinism guarantees through:
 
 - **Safe-To-Process (STP)** constraints that bound waiting time
 - **Clock synchronization** to align physical clocks
@@ -85,7 +85,7 @@ Explore the detailed documentation for each aspect of the design:
 
     ---
 
-    Understand reactors, reactions, ports, and connections—the building blocks of reactor-uc programs.
+    Understand reactors, reactions, ports, and connections—the building blocks of micro-LF programs.
 
     [:octicons-arrow-right-24: Reactor Model](reactor-model.md)
 
@@ -109,7 +109,7 @@ Explore the detailed documentation for each aspect of the design:
 
     ---
 
-    Understand the pre-allocation strategy that makes reactor-uc suitable for embedded systems.
+    Understand the pre-allocation strategy that makes the uLF runtime suitable for embedded systems.
 
     [:octicons-arrow-right-24: Memory](memory.md)
 
@@ -117,7 +117,7 @@ Explore the detailed documentation for each aspect of the design:
 
     ---
 
-    See how reactor-uc adapts to different operating systems and hardware.
+    See how the uLF runtime adapts to different operating systems and hardware.
 
     [:octicons-arrow-right-24: Platforms](platform.md)
 

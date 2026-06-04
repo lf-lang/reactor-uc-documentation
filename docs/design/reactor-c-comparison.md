@@ -1,10 +1,10 @@
-# reactor-uc vs reactor-c
+# uLF vs reactor-c
 
-Both runtimes implement the [Lingua Franca](https://lf-lang.org) reactor model in C, but they diverge sharply in memory model, toolchain integration, and target environment. **reactor-c** is the reference implementation for desktop and server workloads; **reactor-uc** is purpose-built for resource-constrained embedded systems.
+Both runtimes implement the [Lingua Franca](https://lf-lang.org) reactor model in C, but they diverge sharply in memory model, toolchain integration, and target environment. **reactor-c** is the reference implementation for desktop and server workloads; **uLF** is purpose-built for resource-constrained embedded systems.
 
 ## At a Glance
 
-| Feature | reactor-uc | reactor-c |
+| Feature | uLF | reactor-c |
 |---------|-----------|-----------|
 | Memory model | Static / stack-only | Heap-allocated, reference-counted |
 | Embedded RTOS support | 8+ platforms, first-class | Limited |
@@ -25,13 +25,13 @@ This is the most fundamental difference between the two runtimes.
 
 **reactor-c** uses dynamically allocated, reference-counted `lf_token_t` objects for every port and action payload. A token wraps a heap-allocated value with a reference count; the runtime frees it when the count reaches zero. This enables dynamic-length messages and complex struct types with custom destructors and copy constructors, but it requires `malloc`/`free` and per-timestep garbage collection.
 
-**reactor-uc** allocates all runtime objects — reactors, ports, actions, connections, event queues — statically at compile time. Buffer sizes and array dimensions are encoded directly into the generated struct definitions by the `macros_internal.h` layer. No heap allocation occurs after `lf_start()`. This makes reactor-uc safe for MCUs without a heap, with deterministic WCET requirements, or in safety-critical contexts where dynamic allocation is forbidden.
+**uLF** allocates all runtime objects — reactors, ports, actions, connections, event queues — statically at compile time. Buffer sizes and array dimensions are encoded directly into the generated struct definitions by the `macros_internal.h` layer. No heap allocation occurs after `lf_start()`. This makes the uLF runtime safe for MCUs without a heap, with deterministic WCET requirements, or in safety-critical contexts where dynamic allocation is forbidden.
 
 ## Clean Code Generation via Macros
 
 **reactor-c** emits raw C structs, explicit constructor calls, and untyped `void*` casts directly into generated files. The generated code is verbose and closely tied to internal runtime types.
 
-**reactor-uc** wraps every generated construct in typed macros from `macros_internal.h`, which encode the reactor's exact topology into named types at code-generation time:
+**uLF** wraps every generated construct in typed macros from `macros_internal.h`, which encode the reactor's exact topology into named types at code-generation time:
 
 ```c
 // Struct and constructor for a port
@@ -64,7 +64,7 @@ The `lf_set`, `lf_get`, `lf_is_present`, and `lf_schedule` macros dispatch throu
 
 **reactor-c** uses a CMake-only build system designed around Linux and macOS hosts. Support for Zephyr and RP2040 exists but is not a primary concern.
 
-**reactor-uc** provides first-class integration into the native toolchain of each supported platform:
+**uLF** provides first-class integration into the native toolchain of each supported platform:
 
 - **Zephyr** — `lfc` is registered as a `west` command. Running `west build` invokes code generation and compilation in a single step, fully integrated with Zephyr's board configuration and DTS.
 - **RIOT** — `lfc` is hooked into the application `Makefile`. A plain `make all` invokes the code generator first, then the standard RIOT build pipeline.
@@ -86,9 +86,9 @@ reactor-c federations use a **central Runtime Infrastructure (RTI)** process:
 - Optional RTI-mediated authorization (`auth: true` target property).
 - Payload data flows peer-to-peer, but every timing decision passes through the RTI.
 
-### reactor-uc: Peer-to-Peer with Protocol Buffers
+### uLF: Peer-to-Peer with Protocol Buffers
 
-reactor-uc federations are **fully peer-to-peer** — no central broker:
+uLF federations are **fully peer-to-peer** — no central broker:
 
 - Federates connect directly to each other; there is no coordinator process.
 - Messages are serialized with **Protocol Buffers via nanopb**:
@@ -111,7 +111,7 @@ message TaggedMessage {
 
 **reactor-c** provides a single global log level, set via the `logging` target property (`error`, `warning`, `info`, `log`, `debug`). There is no per-module granularity. A custom print handler can be registered via `lf_register_print_function()`.
 
-**reactor-uc** provides compile-time log levels per module:
+**uLF** provides compile-time log levels per module:
 
 | Module | Controls |
 |--------|----------|
@@ -140,7 +140,7 @@ Defining `LF_LOG_DISABLE` removes all logging macros at compile time, leaving ze
 
 **reactor-c** uses direct C function calls on a flat `environment_t` struct. The scheduler is embedded as `lf_scheduler_t*` and swapping scheduler policies (GEDF_NP, NP, adaptive) requires recompiling with a different `.c` file. There is no runtime polymorphism.
 
-**reactor-uc** exposes three clean vtable-based plug-in points:
+**uLF** exposes three clean vtable-based plug-in points:
 
 ```c
 struct Platform {
@@ -189,7 +189,7 @@ target C {
 
 This is a monolithic block — not composable, duplicated across federates, and mixing concerns (build system, runtime, security, deployment) in one place.
 
-**reactor-uc** replaces all target properties with regular LF annotations placed next to the component they configure:
+**uLF** replaces all target properties with regular LF annotations placed next to the component they configure:
 
 ```lf
 // Runtime behaviour
@@ -228,7 +228,7 @@ Annotations are composable, live next to the code they affect, and work identica
 - You need the **full LF ecosystem**: Rust, Python, or TypeScript targets; modal models; the Epoch IDE; built-in tracing and profiling.
 - A **mature, widely-deployed** codebase with extensive test coverage is the priority.
 
-### Use reactor-uc when
+### Use uLF when
 
 - Deploying on **bare-metal or RTOS** devices: Zephyr, RIOT, FreeRTOS, Pico SDK, ESP-IDF, Patmos, FlexPRET, or ADuCM355.
 - **Static memory** is required — no heap, deterministic WCET, or safety-critical certification.

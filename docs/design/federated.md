@@ -1,6 +1,6 @@
 # Federated Execution
 
-**Federation** enables reactor programs to run across multiple nodes connected by a network. Each node runs a **federate**—an independent process executing part of the reactor program. reactor-uc maintains determinism guarantees across the distributed system through careful coordination.
+**Federation** enables reactor programs to run across multiple nodes connected by a network. Each node runs a **federate**—an independent process executing part of the reactor program. The uLF runtime maintains determinism guarantees across the distributed system through careful coordination.
 
 ## Why Federation?
 
@@ -357,7 +357,7 @@ into the federation. But also other patterns could be realized with this mechani
 
 ## Clock Synchronization
 
-Physical clocks on different nodes, especially microcontrollers, drift and are not synchronized. reactor-uc can synchronize them.
+Physical clocks on different nodes, especially microcontrollers, drift and are not synchronized. The uLF runtime can synchronize them.
 
 ```c
 struct ClockSyncService {

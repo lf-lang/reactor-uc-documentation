@@ -1,6 +1,6 @@
 # Compile Flags
 
-reactor-uc provides compile-time flags to configure platform selection, feature enabling, logging, memory allocation, and networking. These flags are set via CMake options or compiler definitions.
+The uLF runtime provides compile-time flags to configure platform selection, feature enabling, logging, memory allocation, and networking. These flags are set via CMake options or compiler definitions.
 
 ## Platform Selection
 
@@ -167,7 +167,7 @@ cmake_minimum_required(VERSION 3.20)
 find_package(Zephyr REQUIRED)
 project(my_reactor_app)
 
-# reactor-uc configuration
+# uLF runtime configuration
 set(PLATFORM "ZEPHYR")
 set(FEDERATED ON)
 set(NETWORK_CHANNEL_TCP_POSIX ON)

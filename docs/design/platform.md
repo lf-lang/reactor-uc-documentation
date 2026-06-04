@@ -1,6 +1,6 @@
 # Platform Abstraction
 
-reactor-uc runs on diverse hardware and operating systems through a **platform abstraction layer**. This page describes the interfaces that platforms must implement and the assumptions the runtime makes about their behavior.
+The uLF runtime runs on diverse hardware and operating systems through a **platform abstraction layer**. This page describes the interfaces that platforms must implement and the assumptions the runtime makes about their behavior.
 
 ## The Platform Interface
 
@@ -83,7 +83,7 @@ If your application has none of these, the blocking `wait_until` suffices and `w
 
 ## Mutex Operations
 
-reactor-uc uses mutexes to protect shared state from concurrent access:
+The uLF runtime uses mutexes to protect shared state from concurrent access:
 
 ```c
 MUTEX_T mutex;

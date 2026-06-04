@@ -1,4 +1,4 @@
-site_name: reactor-uc
+site_name: micro-LF
 site_url: https://micro-lf.org
 repo_url: https://github.com/lf-lang/reactor-uc
 repo_name: lf-lang/reactor-uc
@@ -18,7 +18,7 @@ nav:
     - Platform Abstraction: design/platform.md
     - Code Generation: design/building.md
     - Federated Execution: design/federated.md
-    - vs reactor-c: design/reactor-c-comparison.md
+    - uLF vs reactor-c: design/reactor-c-comparison.md
   - Documentation:
     - Annotations: documentation/annotations.md
     - Reaction API: documentation/reaction_api.md
@@ -101,7 +101,7 @@ extra:
       link: https://github.com/lf-lang/reactor-uc
 
 copyright: >
-  Copyright &copy; 2024 - 2025 reactor-uc Contributors
+  Copyright &copy; 2024 - 2025 micro-LF Contributors
 
 plugins:
   - privacy

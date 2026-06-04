@@ -1,2 +1,2 @@
-# MkDocs hooks for reactor-uc documentation
+# MkDocs hooks for micro-LF documentation
 # Currently empty - add custom hooks as needed

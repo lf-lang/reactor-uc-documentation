@@ -1,6 +1,6 @@
 # Annotations
 
-Annotations in reactor-uc allow you to configure reactor components, specify platform details, and set up network communication. They refine system behavior and enable runtime optimizations across different hardware platforms.
+Annotations in micro-LF allow you to configure reactor components, specify platform details, and set up network communication. They refine system behavior and enable runtime optimizations across different hardware platforms.
 
 ## Build Configuration
 
@@ -262,7 +262,7 @@ Configure distributed clock synchronization across federated systems.
 
 ## Legacy Annotations (Not Supported)
 
-The following annotations are from earlier Lingua Franca versions and are not currently supported in reactor-uc:
+The following annotations are from earlier Lingua Franca versions and are not currently supported in micro-LF:
 
 - `@label()`
 - `@sparse()`

@@ -1,6 +1,6 @@
 # Getting Started
 
-This guide walks you through setting up your first reactor-uc project.
+This guide walks you through setting up your first micro-LF project.
 
 ## Prerequisites
 
@@ -21,7 +21,7 @@ Platform-specific tools:
 
 ## Quick Start
 
-### 1. Clone reactor-uc
+### 1. Clone micro-LF
 
 ```bash
 git clone https://github.com/lf-lang/reactor-uc.git --recurse-submodules
