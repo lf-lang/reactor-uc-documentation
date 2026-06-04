@@ -88,10 +88,11 @@ Specify which platforms a federate should be compiled for in multi-platform fede
 
 - **`@platform("<platform_name>")`**
     
-    Generic platform annotation for specifying target platforms.
+    Generic platform annotation for specifying target platforms:
     
     **Valid platforms:**
-    - `"NATIVE"`: Native/Linux platform
+
+    - `"NATIVE"`: Native (POSIX: Linux or macOS) platform
     - `"PICO"`: Raspberry Pi Pico
     - `"ZEPHYR"`: Zephyr RTOS
     - `"RIOT"`: RIOT OS
@@ -100,14 +101,7 @@ Specify which platforms a federate should be compiled for in multi-platform fede
     - `"ESP-IDF"`: ESP-IDF framework
     - `"FREERTOS"`: FreeRTOS
 
-
-!!! warning "Deprecation Notice"
-    These annotations may be deprecated in a future release.
-
-- **`@platform_riot()`** - Compile for RIOT OS
-- **`@platform_zephyr()`** - Compile for Zephyr RTOS
-- **`@platform_patmos()`** - Compile for Patmos hardware
-- **`@platform_native()`** - Compile for native/Linux platform
+   These platform names are not case-sensitive.
 
 ## Network Interfaces
 
