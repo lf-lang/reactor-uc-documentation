@@ -44,3 +44,25 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+/* API function signature blocks */
+.api-sig {
+    display: block;
+    background-color: #e8ecf8;
+    border-top: 1px solid #c0c9ed;
+    border-bottom: 1px solid #c0c9ed;
+    padding: 0.45em 0.8em;
+    border-radius: 4px;
+    margin: 1.2em 0 0.4em 0;
+    font-size: 1em;
+}
+
+.api-sig code {
+    background-color: transparent;
+}
+
+[data-md-color-scheme="slate"] .api-sig {
+    background-color: rgba(50, 66, 168, 0.4);
+    border-top-color: rgba(100, 120, 220, 0.7);
+    border-bottom-color: rgba(100, 120, 220, 0.7);
+}
