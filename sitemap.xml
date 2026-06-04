@@ -2,98 +2,98 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://micro-lf.org/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-04</lastmod>
     </url>
     <url>
          <loc>https://micro-lf.org/publications/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-04</lastmod>
     </url>
     <url>
          <loc>https://micro-lf.org/design/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-04</lastmod>
     </url>
     <url>
          <loc>https://micro-lf.org/design/building/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-04</lastmod>
     </url>
     <url>
          <loc>https://micro-lf.org/design/federated/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-04</lastmod>
     </url>
     <url>
          <loc>https://micro-lf.org/design/memory/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-04</lastmod>
     </url>
     <url>
          <loc>https://micro-lf.org/design/platform/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-04</lastmod>
     </url>
     <url>
          <loc>https://micro-lf.org/design/reactor-c-comparison/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-04</lastmod>
     </url>
     <url>
          <loc>https://micro-lf.org/design/reactor-model/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-04</lastmod>
     </url>
     <url>
          <loc>https://micro-lf.org/design/scheduling/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-04</lastmod>
     </url>
     <url>
          <loc>https://micro-lf.org/design/time-model/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-04</lastmod>
     </url>
     <url>
          <loc>https://micro-lf.org/documentation/annotations/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-04</lastmod>
     </url>
     <url>
          <loc>https://micro-lf.org/documentation/compile-flags/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-04</lastmod>
     </url>
     <url>
          <loc>https://micro-lf.org/documentation/reaction_api/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-04</lastmod>
     </url>
     <url>
          <loc>https://micro-lf.org/getting-started/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-04</lastmod>
     </url>
     <url>
          <loc>https://micro-lf.org/platforms/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-04</lastmod>
     </url>
     <url>
          <loc>https://micro-lf.org/platforms/esp-idf/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-04</lastmod>
     </url>
     <url>
          <loc>https://micro-lf.org/platforms/freertos/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-04</lastmod>
     </url>
     <url>
          <loc>https://micro-lf.org/platforms/patmos/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-04</lastmod>
     </url>
     <url>
          <loc>https://micro-lf.org/platforms/pico/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-04</lastmod>
     </url>
     <url>
          <loc>https://micro-lf.org/platforms/riot/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-04</lastmod>
     </url>
     <url>
          <loc>https://micro-lf.org/platforms/zephyr/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-04</lastmod>
     </url>
     <url>
          <loc>https://micro-lf.org/projects/nxp-frdm-k64f/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-04</lastmod>
     </url>
     <url>
          <loc>https://micro-lf.org/projects/redundant-picos/</loc>
-         <lastmod>2026-06-03</lastmod>
+         <lastmod>2026-06-04</lastmod>
     </url>
 </urlset>
