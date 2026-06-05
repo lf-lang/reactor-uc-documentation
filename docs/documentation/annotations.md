@@ -67,7 +67,7 @@ Configure global runtime behavior and system-wide options.
 
 Annotations for configuring individual reactor components and connections.
 
-- **`@max_pending_event(<number>)`**
+- **`@max_pending_events(<number>)`**
     
     Specifies the maximum number of elements that can be queued in a logical action's buffer. This controls memory usage and prevents unbounded growth of pending events.
     

@@ -121,17 +121,6 @@ int values[] = {1, 2, 3};
 lf_set_array(output, 3, values);
 ```
 
-**`lf_get(port)`**{ .api-sig }
-
-Reads the current value from an input port.
-
-**Returns:** Current port value (type depends on port declaration)
-
-**Example:**
-```c
-int value = lf_get(input);
-```
-
 **`lf_is_present(port)`**{ .api-sig }
 
 Checks if a port has a value present at the current logical time.
@@ -141,7 +130,7 @@ Checks if a port has a value present at the current logical time.
 **Example:**
 ```c
 if (lf_is_present(input)) {
-  int value = lf_get(input);
+  int value = input->value;
 }
 ```
 
