@@ -87,6 +87,9 @@ Requests that the reactor system shut down gracefully after the specified time.
 ## Port Operations
 
 Read and write values on reactor ports.
+To read the value of an input port, simply reference
+`port->value` (or `port[i]-value` for a multiport),
+where `port` is replaced with the port name.
 
 **`lf_set(port, value)`**{ .api-sig }
 
