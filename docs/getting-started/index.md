@@ -4,7 +4,7 @@ This guide walks you through setting up your first micro-LF project.
 
 ## Prerequisites
 
-All platforms require:
+The code generator requires:
 
 - **Git** - [git-scm.com](https://git-scm.com/)
 - **Java 17** - [openjdk.org](https://openjdk.org/projects/jdk/17/) (for the Lingua Franca compiler)
@@ -13,6 +13,7 @@ Platform-specific tools:
 
 | Platform | Additional Requirements |
 |----------|------------------------|
+| Native | cmake |
 | Zephyr | Python 3, west, Zephyr SDK |
 | RIOT | make 4.0+, ARM cross-compiler |
 | Pico | CMake, ARM cross-compiler, picotool |
@@ -30,7 +31,7 @@ export REACTOR_UC_PATH=$(pwd)/reactor-uc
 
 ### 2. Clone a template repository
 
-Choose a template for your target platform:
+Choose a template for your target platform (except "Native", which does not need a template repo):
 
 <div class="grid cards" markdown>
 
@@ -113,6 +114,13 @@ Choose a template for your target platform:
 
 ### 3. Build and run
 
+=== "Native"
+
+    ```bash
+    ulfc src/MyProgram.lf
+    bin/MyProgram
+    ```
+    
 === "Zephyr"
 
     ```bash
