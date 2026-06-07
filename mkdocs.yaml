@@ -34,6 +34,7 @@ nav:
     - FreeRTOS: platforms/freertos/index.md
     - ESP-IDF: platforms/esp-idf/index.md
     - Patmos: platforms/patmos/index.md
+    - POSIX (Linux / macOS): platforms/posix/index.md
 
 theme:
   name: material

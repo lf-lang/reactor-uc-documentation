@@ -60,6 +60,12 @@
 
     [:octicons-arrow-right-24: FreeRTOS](platforms/freertos/index.md)
 
+-   :fontawesome-brands-linux:{ style="font-size: 48px" }
+
+    ---
+
+    [:octicons-arrow-right-24: POSIX (Linux / macOS)](platforms/posix/index.md)
+
 </div>
 
 ## Lingua Franca
