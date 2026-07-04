@@ -1,6 +1,6 @@
 # RIOT
 
-- **Template**: [lf-riot-uc-template](https://github.com/lf-lang/lf-riot-uc-template)
+- **Template**: [ulf-riot-template](https://github.com/lf-lang/ulf-riot-template)
 - **RIOT Documentation**: [doc.riot-os.org](https://doc.riot-os.org/)
 - **Supported Boards**: [RIOT Board Support](https://www.riot-os.org/boards.html)
 
@@ -24,7 +24,7 @@ nix develop
 Clone and initialize submodules:
 
 ```bash
-git clone https://github.com/lf-lang/lf-riot-uc-template.git my-project
+git clone https://github.com/lf-lang/ulf-riot-template.git my-project
 cd my-project
 git submodule update --init --recursive
 ```

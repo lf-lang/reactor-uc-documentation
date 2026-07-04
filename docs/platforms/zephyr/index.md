@@ -1,6 +1,6 @@
 # Zephyr
 
-- **Template**: [lf-zephyr-uc-template](https://github.com/lf-lang/lf-zephyr-uc-template)
+- **Template**: [ulf-zephyr-template](https://github.com/lf-lang/ulf-zephyr-template)
 - **Zephyr Documentation**: [docs.zephyrproject.org](https://docs.zephyrproject.org/4.1.0/)
 - **Supported Boards**: [Zephyr Board Index](https://docs.zephyrproject.org/4.1.0/boards/index.html)
 

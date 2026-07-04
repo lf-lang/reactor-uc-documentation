@@ -1,6 +1,6 @@
 # ESP-IDF
 
-- **Template**: [lf-esp-idf-uc-template](https://github.com/lf-lang/lf-esp-idf-uc-template)
+- **Template**: [ulf-esp-idf-template](https://github.com/lf-lang/ulf-esp-idf-template)
 - **ESP-IDF Documentation**: [docs.espressif.com](https://docs.espressif.com/projects/esp-idf/en/latest/)
 - **Supported Boards**: ESP32, ESP32-C3, ESP32-C6, ESP32-S2, ESP32-S3, ESP32-H2
 
@@ -17,7 +17,7 @@ In addition to the common prerequisites:
 Clone and initialize submodules:
 
 ```bash
-git clone https://github.com/lf-lang/lf-esp-idf-uc-template.git my-project
+git clone https://github.com/lf-lang/ulf-esp-idf-template.git my-project
 cd my-project
 git submodule update --init --recursive
 ```

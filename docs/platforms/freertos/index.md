@@ -1,6 +1,6 @@
 # FreeRTOS
 
-- **Template**: [lf-freertos-uc-template](https://github.com/lf-lang/lf-freertos-uc-template)
+- **Template**: [ulf-freertos-template](https://github.com/lf-lang/ulf-freertos-template)
 - **FreeRTOS Documentation**: [freertos.org](https://www.freertos.org/Documentation/02-Kernel/07-Books-and-manual/01-RTOS_book)
 - **Supported Devices**: [FreeRTOS Supported Devices](https://www.freertos.org/Documentation/02-Kernel/03-Supported-devices/00-Supported-devices)
 
@@ -15,7 +15,7 @@ The FreeRTOS template currently supports:
 Clone and initialize submodules:
 
 ```bash
-git clone https://github.com/lf-lang/lf-freertos-uc-template.git my-project
+git clone https://github.com/lf-lang/ulf-freertos-template.git my-project
 cd my-project
 git submodule update --init --recursive
 ```
@@ -41,7 +41,7 @@ picotool load -x bin/Blink.elf
 ## Project Structure
 
 ```
-lf-freertos-uc-template/
+ulf-freertos-template/
 ├── CMakeLists.txt
 ├── platforms/
 │   └── pico/

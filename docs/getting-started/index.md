@@ -41,7 +41,7 @@ Choose a template for your target platform (except "Native", which does not need
 
     **Zephyr** · West
 
-    [:octicons-arrow-right-24: lf-zephyr-uc-template](https://github.com/lf-lang/lf-zephyr-uc-template)
+    [:octicons-arrow-right-24: ulf-zephyr-template](https://github.com/lf-lang/ulf-zephyr-template)
 
 -   ![RIOT](../assets/logos/RIOT.png){: style="height:48px"}
 
@@ -49,7 +49,7 @@ Choose a template for your target platform (except "Native", which does not need
 
     **RIOT** · Make
 
-    [:octicons-arrow-right-24: lf-riot-uc-template](https://github.com/lf-lang/lf-riot-uc-template)
+    [:octicons-arrow-right-24: ulf-riot-template](https://github.com/lf-lang/ulf-riot-template)
 
 -   ![Pico](../assets/logos/pico.svg){: style="height:48px"}
 
@@ -57,7 +57,7 @@ Choose a template for your target platform (except "Native", which does not need
 
     **Raspberry Pi Pico** · CMake
 
-    [:octicons-arrow-right-24: lf-pico-uc-template](https://github.com/lf-lang/lf-pico-uc-template)
+    [:octicons-arrow-right-24: ulf-pico-template](https://github.com/lf-lang/ulf-pico-template)
 
 -   ![FreeRTOS](../assets/logos/freertos.svg){: style="height:48px"}
 
@@ -65,20 +65,20 @@ Choose a template for your target platform (except "Native", which does not need
 
     **FreeRTOS** · CMake
 
-    [:octicons-arrow-right-24: lf-freertos-uc-template](https://github.com/lf-lang/lf-freertos-uc-template)
+    [:octicons-arrow-right-24: ulf-freertos-template](https://github.com/lf-lang/ulf-freertos-template)
 
 -   **ESP-IDF** · CMake
 
     ---
 
-    [:octicons-arrow-right-24: lf-esp-idf-uc-template](https://github.com/lf-lang/lf-esp-idf-uc-template)
+    [:octicons-arrow-right-24: ulf-esp-idf-template](https://github.com/lf-lang/ulf-esp-idf-template)
 
 </div>
 
 === "Zephyr"
 
     ```bash
-    git clone https://github.com/lf-lang/lf-zephyr-uc-template.git my-project
+    git clone https://github.com/lf-lang/ulf-zephyr-template.git my-project
     cd my-project
     python3 -m venv venv && source venv/bin/activate
     pip install west
@@ -90,7 +90,7 @@ Choose a template for your target platform (except "Native", which does not need
 === "RIOT"
 
     ```bash
-    git clone https://github.com/lf-lang/lf-riot-uc-template.git my-project
+    git clone https://github.com/lf-lang/ulf-riot-template.git my-project
     cd my-project
     git submodule update --init --recursive
     ```
@@ -98,7 +98,7 @@ Choose a template for your target platform (except "Native", which does not need
 === "Pico"
 
     ```bash
-    git clone https://github.com/lf-lang/lf-pico-uc-template.git my-project
+    git clone https://github.com/lf-lang/ulf-pico-template.git my-project
     cd my-project
     git submodule update --init --recursive
     ```
@@ -106,7 +106,7 @@ Choose a template for your target platform (except "Native", which does not need
 === "ESP-IDF"
 
     ```bash
-    git clone https://github.com/lf-lang/lf-esp-idf-uc-template.git my-project
+    git clone https://github.com/lf-lang/ulf-esp-idf-template.git my-project
     cd my-project
     git submodule update --init --recursive
     cd esp-idf && ./install.sh esp32 && source ./export.sh && cd ..

@@ -1,6 +1,6 @@
 # Raspberry Pi Pico
 
-- **Template**: [lf-pico-uc-template](https://github.com/lf-lang/lf-pico-uc-template)
+- **Template**: [ulf-pico-template](https://github.com/lf-lang/ulf-pico-template)
 - **Pico SDK**: [github.com/raspberrypi/pico-sdk](https://github.com/raspberrypi/pico-sdk/)
 - **Documentation**: [raspberrypi.com/documentation/pico-sdk](https://www.raspberrypi.com/documentation/pico-sdk/)
 - **Supported Boards**: [Pico Series](https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html)
@@ -16,7 +16,7 @@ Install picotool: [Install Picotool](https://www.lf-lang.org/embedded-lab/Non-Ni
 Clone and initialize submodules:
 
 ```bash
-git clone https://github.com/lf-lang/lf-pico-uc-template.git my-project
+git clone https://github.com/lf-lang/ulf-pico-template.git my-project
 cd my-project
 git submodule update --init --recursive
 ```
