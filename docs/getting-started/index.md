@@ -73,6 +73,12 @@ Choose a template for your target platform (except "Native", which does not need
 
     [:octicons-arrow-right-24: ulf-esp-idf-template](https://github.com/lf-lang/ulf-esp-idf-template)
 
+-   :fontawesome-brands-linux:{ style="font-size: 48px" }
+
+    ---
+
+    [:octicons-arrow-right-24: POSIX (Linux / macOS)](../platforms/posix/index.md)
+
 </div>
 
 === "Zephyr"

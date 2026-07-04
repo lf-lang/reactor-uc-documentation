@@ -24,8 +24,9 @@ nav:
     - Reaction API: documentation/reaction_api.md
     - Compile Flags: documentation/compile-flags.md
   - Examples:
-    - NXP FRDM-K64F: projects/nxp-frdm-k64f.md
     - Redundant Picos: projects/redundant-picos.md
+    - Adafruit Feather Tutorial: projects/adafruit-feather-tutorial.md
+    - NXP FRDM-K64F: projects/nxp-frdm-k64f.md
   - Platforms:
     - platforms/index.md
     - Zephyr: platforms/zephyr/index.md
@@ -38,7 +39,7 @@ nav:
 
 theme:
   name: material
-  logo: assets/logos/lf-white.svg
+  logo: assets/logos/micro-lf.svg
   favicon: assets/logos/favicon.png
   icon:
     repo: fontawesome/brands/github
