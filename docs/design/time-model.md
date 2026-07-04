@@ -50,7 +50,7 @@ lf_tag_compare(b, c);  // Returns -1 (b is earlier)
 
 **Microsteps** solve a subtle problem: what happens when multiple events occur at the same logical time?
 
-Consider a reaction that reads an input and immediately schedules an action with zero delay:
+Consider a reaction that reads an input and immediately schedules an action with a zero delay:
 
 ```
 Logical Time 100ms:
@@ -69,34 +69,6 @@ Tag (100ms, 2): Another zero-delay action (if any)
 ```
 
 Microsteps increment for each "round" of processing at the same logical time, until no more events remain at that time. Then logical time advances to the next scheduled event.
-
-```
-┌─────────────────────────────────────────────────────────┐
-│                    Tag (100ms, 0)                        │
-│  ┌────────────────┐                                      │
-│  │ Process events │──▶ Reactions may schedule at (100ms,1)│
-│  └────────────────┘                                      │
-└─────────────────────────────────────────────────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────┐
-│                    Tag (100ms, 1)                        │
-│  ┌────────────────┐                                      │
-│  │ Process events │──▶ Reactions may schedule at (100ms,2)│
-│  └────────────────┘                                      │
-└─────────────────────────────────────────────────────────┘
-                          │
-                          ▼
-                   (no more events at 100ms)
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────┐
-│                    Tag (200ms, 0)                        │
-│  ┌────────────────┐                                      │
-│  │ Process events │                                      │
-│  └────────────────┘                                      │
-└─────────────────────────────────────────────────────────┘
-```
 
 ## Logical Actions
 
@@ -136,7 +108,7 @@ lf_schedule(action, MSEC(50), &value2);
 
 ## Physical Actions
 
-**Physical actions** bridge the gap between physical time and logical time. They are triggered by external events—interrupts, network packets, user input—that occur at unpredictable physical times.
+**Physical actions** bridge the gap between physical time and logical time. They are triggered by external events-interrupts, network packets, user input - that occur at unpredictable physical times.
 
 ```c
 // In an interrupt handler:
