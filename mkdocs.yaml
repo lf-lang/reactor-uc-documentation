@@ -23,6 +23,7 @@ nav:
     - Annotations: documentation/annotations.md
     - Reaction API: documentation/reaction_api.md
     - Compile Flags: documentation/compile-flags.md
+    - Packages: documentation/packages.md
   - Examples:
     - Redundant Picos: projects/redundant-picos.md
     - Adafruit Feather Tutorial: projects/adafruit-feather-tutorial.md
