@@ -25,7 +25,7 @@ resolves to `my-package/src/lib/Count.ulf`).
 
 ## Where packages are installed
 
-When resolving `package/file`, the compiler searches for a directory named `package` in the
+When resolving `<package/file>`, the compiler searches for a directory named `package` in the
 following locations, in order:
 
 1. **Project build directory:** `root/build/lfc_include/package`  
